@@ -1,6 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 body {
   margin: 0;
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Quicksand', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-display {
+  font-family: 'Quicksand', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.flower-particle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 14px;
+  line-height: 1;
+  transform: translate(-50%, -50%) scale(0);
+  animation: flower-bloom 650ms ease-out forwards;
+}
+
+@keyframes flower-bloom {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(1.15)
+      rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-sheet-up {
+  animation: sheet-up 220ms ease-out;
 }

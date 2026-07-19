@@ -11,9 +11,12 @@ interface TodoListProps {
 export function TodoList({ todos, onToggle, onUpdate, onDelete }: TodoListProps) {
   if (todos.length === 0) {
     return (
-      <p className="rounded-lg border border-dashed border-slate-300 py-10 text-center text-slate-400 dark:border-slate-700 dark:text-slate-500">
-        Henüz görev yok. Yukarıdan yeni bir görev ekleyin.
-      </p>
+      <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-slate-300 py-14 text-center text-slate-400 dark:border-slate-700 dark:text-slate-500">
+        <span className="text-3xl" aria-hidden>
+          🌱
+        </span>
+        <p>Henüz görev yok. Sağ alttaki + ile ekleyin.</p>
+      </div>
     )
   }
 
