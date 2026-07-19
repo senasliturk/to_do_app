@@ -2,7 +2,7 @@
 
 Basit bir yapılacaklar listesi uygulaması. React ve TypeScript ile yazdım, Tailwind CSS ile stillendirdim, veriler tarayıcının localStorage'ında tutuluyor.
 
-**Canlı:** https://todoappsenasli.netlify.app
+**Demo:** https://todoappsenasli.netlify.app
 **Repo:** https://github.com/senasliturk/to_do_app
 
 ![Todo App ekran görüntüsü](docs/screenshot.png)
