@@ -1,82 +1,34 @@
 # Todo App
 
-React + TypeScript + Vite + Tailwind CSS ile geliştirilmiş, verileri tarayıcının **localStorage**'ında saklayan bir Todo (yapılacaklar listesi) uygulaması.
+Basit bir yapılacaklar listesi uygulaması. React ve TypeScript ile yazdım, Tailwind CSS ile stillendirdim, veriler tarayıcının localStorage'ında tutuluyor.
+
+**Canlı:** https://todoappsenasli.netlify.app
+**Repo:** https://github.com/senasliturk/to_do_app
 
 ![Todo App ekran görüntüsü](docs/screenshot.png)
 
-## Özellikler
+Görev ekleyip düzenleyebiliyorsun (çift tıklayarak ya da kalem ikonuyla), silebiliyorsun, "Tümü / Aktif / Tamamlanan" filtreleriyle bakabiliyorsun. Bir görevi tamamlandı işaretleyince küçük bir çiçek animasyonu oynuyor, görev metnine göre de otomatik emoji seçiliyor (market, spor, toplantı gibi kelimeleri tanıyor).
 
-- **Ekle** — yeni görev ekleme
-- **Listeleme** — görevleri listeleme, "Tümü / Aktif / Tamamlanan" filtreleri
-- **Güncelleme** — çift tıklayarak veya "Düzenle" butonuyla görev metnini düzenleme, tamamlandı işaretleme
-- **Silme** — görev silme
-- Veriler `localStorage`'da tutulur, sayfa yenilense de kaybolmaz
-- Görev metnine göre otomatik seçilen emoji ikonlar (market, spor, toplantı vb.)
-- Bir görev tamamlandığında küçük bir 🌸 çiçek patlaması animasyonu oynatılır
-- Alt köşede yüzen "+" buton ile açılan ekleme paneli, sıcak sarı/nane rengi tema
+## Teknolojiler
 
-## Kullanılan Teknolojiler
+React 19, TypeScript, Vite, Tailwind CSS v4, ikonlar için lucide-react.
 
-- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [lucide-react](https://lucide.dev/) (ikonlar)
-
-## Proje Yapısı
+## Klasör yapısı
 
 ```
 src/
-├── components/    # TodoForm, TodoItem, TodoList, FlowerBurst
-├── pages/         # HomePage
-├── interfaces/    # Todo tip tanımları
-├── hooks/         # useTodos (localStorage CRUD mantığı)
-├── utils/         # taskIcon (görev metnine göre emoji seçimi)
-├── App.tsx
-└── main.tsx
+├── components/   TodoForm, TodoItem, TodoList, FlowerBurst
+├── pages/        HomePage
+├── interfaces/   Todo tip tanımı
+├── hooks/        useTodos — localStorage okuma/yazma
+└── utils/        taskIcon — görev metnine göre emoji seçimi
 ```
 
-## Kurulum ve Çalıştırma
+## Çalıştırmak için
 
 ```bash
 npm install
 npm run dev
 ```
 
-Tarayıcıda `http://localhost:5173` adresini açın.
-
-### Production build
-
-```bash
-npm run build
-npm run preview
-```
-
-## GitHub'a Yükleme
-
-Proje klasörü zaten yerel bir git deposu olarak hazırlandı ve ilk commit atıldı. Sadece GitHub'a bağlayıp push etmeniz yeterli:
-
-1. GitHub'da yeni bir **public** repository oluşturun (README/`.gitignore` eklemeden — boş repo).
-2. Bu klasörde:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/<kullanici-adiniz>/<repo-adi>.git
-   git push -u origin main
-   ```
-3. Repo public olduğundan emin olun (Settings → General → Danger Zone → Change visibility).
-
-## Netlify ile Yayınlama
-
-1. [Netlify](https://app.netlify.com) hesabınıza giriş yapın → **Add new site → Import an existing project**.
-2. GitHub reponuzu seçin.
-3. Build ayarları:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-4. **Deploy site** butonuna basın. Netlify size `https://<site-adi>.netlify.app` şeklinde bir link verecektir.
-
-> Alternatif: Netlify CLI ile de yayınlayabilirsiniz: `npx netlify-cli deploy --prod`.
-
-## Teslim
-
-Proje teslim formuna şunları paylaşın:
-- GitHub repo linki (public)
-- Netlify (veya muadili) canlı yayın linki
+`http://localhost:5173` adresinden açılıyor. Build için: `npm run build`
